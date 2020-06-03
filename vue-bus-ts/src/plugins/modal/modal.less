@@ -1,0 +1,146 @@
+.out_div{
+    display:block;
+    width: 100%;
+    height: 100%;
+    // position: absolute;
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+    .flex_div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        .modal_div{
+            display: block;
+            width: 540px;
+            border-radius: 14px;
+            background-color: #ffffff;
+        }
+    }
+}
+.modal_div{
+    .modal_content{
+        display:block;
+        // width: 100%;
+        padding: 60px 40px;
+        text-align: center;
+        &::before{
+            border-bottom: 1px solid #d6d6e0;
+        }
+        
+        .icon{
+            display:block;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            background-image: url('https://static.rong360.com/upload/png/c1/17/c117719347891e21712fff1de7686fa1.png');
+            background-size: 120px 120px;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        .input_icon{
+            background-image: url('https://static.rong360.com/upload/png/a9/02/a902f05202ec4b4a15f239680467cb6b.png');
+        }
+        .fail_icon{
+            background-image: url('https://static.rong360.com/upload/png/24/a4/24a4858955f0ff77913c719c7ed12669.png');
+        }
+        .modal_title{
+            display: block;
+            line-height: 60px;
+            font-size: 44px;
+            color: #3B3453;
+            font-weight: bold;
+            text-align: center;
+        }
+        .message{
+            display: block;
+            padding-top: 20px;
+            font-size: 26px;
+            line-height: 36px;
+            color: #605F6B;
+        }
+        .input_box{
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 460px;
+            border: 1px solid #D8D9DC;
+            border-radius: 6px;
+        }
+    }
+    .modal_operates{
+        display: block;
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        line-height: 100px;
+        font-size: 30px;
+        color: #333333;
+        text-align: center;
+        .operate{
+            display: block;
+            width: 50%;
+            height: 100%;
+            line-height: 100px;
+            float: left;
+            box-sizing: border-box; 
+        }
+        .fail{
+            // border-right: 1px solid #D8D8D8
+        }
+        .succ{
+            color: #FF8200;
+        }
+    }
+    
+}
+.input_box{
+    .input_item{
+        display: block;
+        width: 100%;
+        height: 90px;
+        overflow: hidden;
+        border-bottom: 1px solid #D8D9DC;
+        &:last-child{
+            border-bottom: 0px;
+        }
+        .input{
+            display: block;
+            width: 208px;
+            height: 50px;
+            padding: 20px 20px;
+        }
+        .left{
+            width: 250px;
+            float: left;
+        }
+        .img_check{
+            display: block;
+            width: 150px;
+            height: 70px;
+            background-color: gray;
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .msg_check{
+            display: block;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #D8D9DC;
+            border-radius: 40px;
+            float: right;
+            margin-top: 20px;
+            margin-right: 10px;
+            font-size: 22px;
+            color: #4080E8;
+            text-align: center;
+        }
+    }
+}

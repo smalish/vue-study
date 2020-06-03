@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <h3 @click="clickName">yangying</h3>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -13,6 +13,24 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  mounted() {
+    
+  },
+  methods: {
+    clickName(){
+      console.log('clickName:::')
+      // this.$bus.emit('add', () => {
+      //   console.log('emit add :::')
+      // })
+
+      this.$toast({
+        message: '提示文案啦啦啦',
+        complete: () => {
+          console.log('complete---')
+        }
+      })
+    }
   }
 }
 </script>
