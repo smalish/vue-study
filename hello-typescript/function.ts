@@ -2,7 +2,7 @@
  * @Description: 函数
  * @Author: yangying01
  * @Date: 2020-06-03 13:38:12
- * @LastEditTime: 2020-06-03 17:24:05
+ * @LastEditTime: 2020-06-03 19:25:49
  * @LastEditors: yangying01
  */ 
 
@@ -42,14 +42,14 @@
 // console.log(`n = ${n}`)
 
 // 不确定参数个数
-function fun2(a:number, ...rest:number[]){
-    return rest.reduce( (total:number, num:number):number => {
-        return total + num
-    }, a)
-}
+// function fun2(a:number, ...rest:number[]){
+//     return rest.reduce( (total:number, num:number):number => {
+//         return total + num
+//     }, a)
+// }
 
-let sum = fun2(1,2,3,4,5,6)
-console.log(`sum = ${sum}`)
+// let sum = fun2(1,2,3,4,5,6)
+// console.log(`sum = ${sum}`)
 
 
 // function func1(a:number, b?:number = 10): number{ // error,参数不能又是可选又赋默认值
@@ -82,3 +82,27 @@ console.log(`sum = ${sum}`)
 // fun2(1,2)
 // let a = fun2(1,2)
 // let b:number = fun2(1,2)
+
+
+// 类型判断
+function isString(value:any):value is string{
+    return typeof value === 'string'
+}
+
+function checkValue(value: any): void{
+
+    // if(typeof value === 'string'){
+    //     console.log(`${value} is string`)
+    // }
+
+    if(isString(value)){
+        console.log(`${value} is string`)
+    }
+
+    if(typeof value === 'number'){
+        console.log(`${value} is number`)
+    }
+}
+
+checkValue(111)
+checkValue('lalala')

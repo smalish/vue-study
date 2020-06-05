@@ -2,7 +2,7 @@
  * @Description: ts基础知识
  * @Author: yangying01
  * @Date: 2020-06-03 11:48:58
- * @LastEditTime: 2020-06-03 17:27:49
+ * @LastEditTime: 2020-06-04 15:20:56
  * @LastEditors: yangying01
 --> 
 
@@ -36,6 +36,14 @@ const: 定义常量,定义时需赋值
 有些参数非必传(?)，放在参数后面func(a:number, b?:number): number{...}
 参数付默认值(=) func(a:number, b:number = 0): number{...}
 不确定参数个数func(a:number, b:number，...rest:number[]): number{...}
+
+* 接口
+非必传属性(?)
+默认值（=）
+任意数量的属性,字符串索引签名 [propName: string]: any
+
+* 类
+
 
 
 * 联合类型？？？
