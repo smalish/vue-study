@@ -2,7 +2,7 @@
  * @Description: 接口
  * @Author: yangying01
  * @Date: 2020-06-03 18:09:34
- * @LastEditTime: 2020-06-05 11:27:36
+ * @LastEditTime: 2020-06-08 15:28:23
  * @LastEditors: yangying01
  */ 
 
@@ -226,6 +226,24 @@ class TextBox extends Control {
 // class Location {
 
 // }
+
+interface CallBack{
+    (succ: boolean) : void
+}
+
+interface  Print{
+    (callback: CallBack): void
+}
+
+let callback: CallBack = (params: boolean) => {
+    console.log('lalala')
+}
+
+let print1:Print = (callback: CallBack) => {
+    callback(true)
+}
+
+print1(callback)
 
 
 

@@ -3,7 +3,7 @@
  * @Description: 接口
  * @Author: yangying01
  * @Date: 2020-06-03 18:09:34
- * @LastEditTime: 2020-06-05 11:27:36
+ * @LastEditTime: 2020-06-08 15:28:23
  * @LastEditors: yangying01
  */
 var __extends = (this && this.__extends) || (function () {
@@ -73,9 +73,10 @@ var TextBox = /** @class */ (function (_super) {
     TextBox.prototype.select = function () { };
     return TextBox;
 }(Control));
-// 错误：“Image”类型缺少“state”属性。
-// class Image1 implements SelectableControl {
-//     select() { }
-// }
-// class Location {
-// }
+var callback = function (params) {
+    console.log('lalala');
+};
+var print1 = function (callback) {
+    callback(true);
+};
+print1(callback);

@@ -2,7 +2,7 @@
  * @Description: ts基础知识
  * @Author: yangying01
  * @Date: 2020-06-03 11:48:58
- * @LastEditTime: 2020-06-04 15:20:56
+ * @LastEditTime: 2020-06-08 15:59:20
  * @LastEditors: yangying01
 --> 
 
@@ -42,7 +42,25 @@ const: 定义常量,定义时需赋值
 默认值（=）
 任意数量的属性,字符串索引签名 [propName: string]: any
 
+可以描述
+
 * 类
+
+1.类实现接口
+2.可选属性(?)与扩展属性([propName:string]: any)
+3.只读属性，readOnly name: string
+4.实现函数 
+```
+interface fun{
+    (param: string): void
+}
+```
+
+* 类型断言， <stiing>x
+是在编译的时候告诉编译器，我断言某个变量是这个类型，我写的我比你清楚
+注意类型断言并不会转换类型，只是告诉编译器检查的时候当成某个类型检查
+
+断言也不可能随便断言，number编译器也不知道怎么转换为boolean，案例见sure.ts
 
 
 
