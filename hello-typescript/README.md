@@ -2,7 +2,7 @@
  * @Description: ts基础知识
  * @Author: yangying01
  * @Date: 2020-06-03 11:48:58
- * @LastEditTime: 2020-06-08 15:59:20
+ * @LastEditTime: 2020-06-12 16:48:43
  * @LastEditors: yangying01
 --> 
 
@@ -38,15 +38,59 @@ const: 定义常量,定义时需赋值
 不确定参数个数func(a:number, b:number，...rest:number[]): number{...}
 
 * 接口
+1. 表示数据
 非必传属性(?)
 默认值（=）
 任意数量的属性,字符串索引签名 [propName: string]: any
+```
+interface Data{
+    name: string
+    age: number
+    [propName: string]: any
+}
+```
 
-可以描述
+2. 表示函数
+```
+interface Data{
+    (name: string): void
+}
+```
+
+3. 表示可索引的数据类型
+```
+['aaa', 'bbb']
+interface Data{
+    [index: number]: string
+}
+但是这种方式定义的索引数据类型是数组，但是不能.length及push、pop方法，需要使用这些方法需要手动在接口中添加这些属性
+
+{name: 'yy', age: 18}
+interface Data{
+    [propName: string]: any
+}
+```
+
+
+3. 表示类
+```
+interface Data{
+    name: string
+    age: number
+    constructor(){}
+    sayName(): void{
+        console.log(this.name)
+    }
+}
+```
+
+3. 继承
+接口可以继承接口，接口也可以继承类（接口不用实现），接口可以继承多个类
+类可以实现接口(每个属性和方法都要实现)，类不能继承多个类，但是类可以实现多个接口
 
 * 类
 
-1.类实现接口
+1.类实现接口,
 2.可选属性(?)与扩展属性([propName:string]: any)
 3.只读属性，readOnly name: string
 4.实现函数 
@@ -55,6 +99,9 @@ interface fun{
     (param: string): void
 }
 ```
+5抽象类，不能实例化，普通类继承抽象类
+抽象类中可以定义自己的抽象方法，没有方法体，普通类继承抽象类需要去实现它的抽象方法
+
 
 * 类型断言， <stiing>x
 是在编译的时候告诉编译器，我断言某个变量是这个类型，我写的我比你清楚
@@ -63,8 +110,10 @@ interface fun{
 断言也不可能随便断言，number编译器也不知道怎么转换为boolean，案例见sure.ts
 
 
+* 泛型
 
-* 联合类型？？？
+
+* 联合类型 a|b
 
 * Object???
 

@@ -2,7 +2,7 @@
  * @Description: 接口
  * @Author: yangying01
  * @Date: 2020-06-03 18:09:34
- * @LastEditTime: 2020-06-08 15:28:23
+ * @LastEditTime: 2020-06-11 10:50:40
  * @LastEditors: yangying01
  */ 
 
@@ -231,7 +231,7 @@ interface CallBack{
     (succ: boolean) : void
 }
 
-interface  Print{
+interface Print{
     (callback: CallBack): void
 }
 

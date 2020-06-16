@@ -3,7 +3,7 @@
  * @Description: 函数
  * @Author: yangying01
  * @Date: 2020-06-03 13:38:12
- * @LastEditTime: 2020-06-03 19:25:49
+ * @LastEditTime: 2020-06-11 14:07:15
  * @LastEditors: yangying01
  */
 //  固定参数
@@ -77,3 +77,20 @@ function checkValue(value) {
 }
 checkValue(111);
 checkValue('lalala');
+function sum(x, y, z) {
+    z = z || 0;
+    console.log("sum = " + (x + y + z));
+    return x + y + z;
+}
+sum(1, 2); //3
+sum(1, 2, 3); //6
+function divide(x, y) {
+    if (typeof x === 'number') {
+        return x / y;
+    }
+    else {
+        return [x.substring(0, y), x.substring(y)];
+    }
+}
+console.log(divide(6, 3));
+console.log(divide('hello typescript', 4));

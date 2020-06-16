@@ -30,7 +30,7 @@ if (true) {
 // console.log(b)
 // 常量使用，定义时赋值
 if (true) {
-    var c = 1;
+    var c_1 = 1;
 }
 // 报错
 // console.log(c)

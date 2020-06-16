@@ -2,7 +2,7 @@
  * @Description: ；类
  * @Author: yangying01
  * @Date: 2020-06-04 10:23:29
- * @LastEditTime: 2020-06-08 15:00:14
+ * @LastEditTime: 2020-06-12 16:34:30
  * @LastEditors: yangying01
  */ 
 
@@ -284,3 +284,56 @@ interface Ponit3d extends Ponit{
 }
 
 let point3d: Ponit3d = {x: 1, y: 2, z: 3}
+
+this
+class Friut{
+    // name: string
+    constructor(public name: string){
+
+    }
+
+    display(): any{
+        // return function(): string{
+        //         return this.name //error
+        // }
+
+        return (): string => {
+                return this.name
+        }
+    }
+}
+
+
+// 判断类的属性和方法存不存在
+
+//联合类型和类型断言
+// p is Person 是在编译阶段
+//boolean 是在运行
+// instanceof
+class Car{
+    start():void{
+        console.log('car starting')
+    }
+    drive(): void{
+        console.log('car driving')
+    }
+}
+
+class Bike{
+    start():void{
+        console.log('bike starting')
+    }
+    ride():void{
+        console.log('bike ridding')
+    }
+}
+
+function move(tool: Car | Bike): void{
+
+    // 使用instanceof
+    if(tool instanceof Car){
+        tool.drive()
+    }else{
+        tool.ride()
+    }
+}

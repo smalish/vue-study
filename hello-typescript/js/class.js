@@ -3,7 +3,7 @@
  * @Description: ；类
  * @Author: yangying01
  * @Date: 2020-06-04 10:23:29
- * @LastEditTime: 2020-06-08 15:00:14
+ * @LastEditTime: 2020-06-12 16:34:30
  * @LastEditors: yangying01
  */
 var __extends = (this && this.__extends) || (function () {
@@ -253,3 +253,56 @@ var Ponit = /** @class */ (function () {
     return Ponit;
 }());
 var point3d = { x: 1, y: 2, z: 3 };
+this;
+var Friut = /** @class */ (function () {
+    // name: string
+    function Friut(name) {
+        this.name = name;
+    }
+    Friut.prototype.display = function () {
+        // return function(): string{
+        //         return this.name //error
+        // }
+        var _this = this;
+        return function () {
+            return _this.name;
+        };
+    };
+    return Friut;
+}());
+// 判断类的属性和方法存不存在
+//联合类型和类型断言
+// p is Person 是在编译阶段
+//boolean 是在运行
+// instanceof
+var Car = /** @class */ (function () {
+    function Car() {
+    }
+    Car.prototype.start = function () {
+        console.log('car starting');
+    };
+    Car.prototype.drive = function () {
+        console.log('car driving');
+    };
+    return Car;
+}());
+var Bike = /** @class */ (function () {
+    function Bike() {
+    }
+    Bike.prototype.start = function () {
+        console.log('bike starting');
+    };
+    Bike.prototype.ride = function () {
+        console.log('bike ridding');
+    };
+    return Bike;
+}());
+function move(tool) {
+    // 使用instanceof
+    if (tool instanceof Car) {
+        tool.drive();
+    }
+    else {
+        tool.ride();
+    }
+}
