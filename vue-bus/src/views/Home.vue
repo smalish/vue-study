@@ -15,6 +15,14 @@ export default {
     HelloWorld
   },
   mounted() {
+    this.$toast({
+      message: '提示文案啦啦啦',
+      complete: () => {
+        console.log('complete---')
+      }
+    })
+
+    this.$toast.myhide()
     
   },
   methods: {
@@ -24,14 +32,9 @@ export default {
       //   console.log('emit add :::')
       // })
 
-      this.$toast.myshow('1111')
+      
 
-      // this.$toast({
-      //   message: '提示文案啦啦啦',
-      //   complete: () => {
-      //     console.log('complete---')
-      //   }
-      // })
+    
 
 
     }

@@ -61,5 +61,18 @@ MyPlugin.install = function (Vue, options) {
 }
 ```
 
+插件的本质是定义一个install方法，因为Vue.use(Plugin)时会去取Plugin.install方法执行
+如何即使用this.$toast()又调用方法 this.$toast.hideToast()？
+就是需要定义的Vue.prototype.$toast = 变量
+该变量既是一个函数，又有方法属性,例如：
+js函数本身就是一个函数也可以当做对象使用，因为js一切都是对象,每个function本身是Function的实例,也就是说function的原型指向Function.prototype，而Function的原型指向的是Object.prototype, unction instanceof Object ==> true
+
+var a = function(){
+}
+a.hi = function(){console.log('hi')}
+
+a()
+a.hi()
+
 
 参考资料：[vue开发自定义插件(组件)](https://mp.weixin.qq.com/s?__biz=Mzg5OTE5NDEzMA==&mid=2247483686&idx=1&sn=c5f1f112ac0b939f628417f6870a1d54&scene=21#wechat_redirect)
