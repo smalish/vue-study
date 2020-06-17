@@ -8,7 +8,7 @@ import store from './store'
 Vue.config.productionTip = false
 
 Vue.use(Bus)
-Vue.use(Toast)
+Vue.use(Toast, {id: 123})
 
 new Vue({
   router,

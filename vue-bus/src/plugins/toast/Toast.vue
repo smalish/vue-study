@@ -2,13 +2,13 @@
  * @Description: 自定义toast插件
  * @Author: yangying01
  * @Date: 2020-05-31 19:28:57
- * @LastEditTime: 2020-05-31 22:50:40
+ * @LastEditTime: 2020-06-17 15:51:37
  * @LastEditors: yangying01
 --> 
 
 <template>
     <div class="mask" v-show="isShow">
-        <div class="content">{{message}}</div>
+        <div class="content" @click="clickMessage">{{message}}</div>
     </div>
 </template>
 
@@ -18,7 +18,14 @@ export default {
         return {
             isShow: false,
             message: '',
+            duration: 1500,
             complete: function(){}
+        }
+    },
+    methods: {
+        clickMessage(){
+            // this.myHide()
+            this.$emit('myevent')
         }
     }
 }

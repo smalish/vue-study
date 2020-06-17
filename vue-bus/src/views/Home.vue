@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h3 @click="clickName">yangying</h3>
+    <h3 @click="clickName">showToast</h3>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -24,12 +24,16 @@ export default {
       //   console.log('emit add :::')
       // })
 
-      this.$toast({
-        message: '提示文案啦啦啦',
-        complete: () => {
-          console.log('complete---')
-        }
-      })
+      this.$toast.myshow('1111')
+
+      // this.$toast({
+      //   message: '提示文案啦啦啦',
+      //   complete: () => {
+      //     console.log('complete---')
+      //   }
+      // })
+
+
     }
   }
 }
