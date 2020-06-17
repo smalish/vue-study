@@ -10,6 +10,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "suppressImplicitAnyIndexErrors": true,//obj[key] 这样缺少索引签名的索引对象
     "sourceMap": true,
     "baseUrl": ".",
     "types": [

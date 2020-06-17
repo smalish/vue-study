@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: yangying01
  * @Date: 2020-05-29 17:29:46
- * @LastEditTime: 2020-05-31 23:10:39
+ * @LastEditTime: 2020-06-16 11:48:36
  * @LastEditors: yangying01
  */ 
 
@@ -27,7 +27,17 @@ module.exports = {
             .set('assets', resolve('src/assets'))
             .set('components', resolve('src/components'))
             .set('plugins', resolve('src/plugins'))
-            .set('style', resolve('src/style'))
+            .set('@style', resolve('src/style'))
+    },
+    devServer:{
+        proxy: {
+            'hhrstore':{
+                target: 'http://m.hhrcard.com/',
+                ws: true,
+                changeOrigin: true
+            }
+        }
+        
     }
        
 
