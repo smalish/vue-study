@@ -2,7 +2,7 @@
  * @Description: 泛型
  * @Author: yangying01
  * @Date: 2020-06-12 11:41:24
- * @LastEditTime: 2020-06-12 19:21:13
+ * @LastEditTime: 2020-06-19 11:39:30
  * @LastEditors: yangying01
  */ 
 
@@ -71,4 +71,31 @@ let c: Command<number, string> = {
     }
 }
 
+
+// 泛型 extends 约束
+interface Shape{
+    draw(): void
+}
+
+// function drawShapes<S>(shapes: S[]): void{
+//     shapes.forEach(shape => {shape.draw()})//报错：类型“S”上不存在属性“draw”。
+// }
+
+function drawShapes<S extends Shape>(shapes: S[]): void {
+    shapes.forEach(sharp => {sharp.draw()})
+}
+
+class Circle implements Shape{
+    draw():void{
+        console.log('circle draw')
+    }
+}
+
+class Rectangle implements Shape{
+    draw():void{
+        console.log('rectangle draw')
+    }
+}
+
+drawShapes([new Circle(), new Rectangle()])
 

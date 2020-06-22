@@ -122,5 +122,9 @@ declare module "vue/types/vue" {
 
 * [ts配置可见](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/tsconfig.json.html)
 
+* vue-cli3 + ts 项目对axios进行封装：[点击查看](https://www.jianshu.com/p/1349c3f2aba3)
+
+
+
 
 

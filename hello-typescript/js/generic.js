@@ -3,7 +3,7 @@
  * @Description: 泛型
  * @Author: yangying01
  * @Date: 2020-06-12 11:41:24
- * @LastEditTime: 2020-06-12 19:21:13
+ * @LastEditTime: 2020-06-19 11:39:30
  * @LastEditors: yangying01
  */
 function identity(arg) {
@@ -57,3 +57,26 @@ var c = {
         return '1';
     }
 };
+// function drawShapes<S>(shapes: S[]): void{
+//     shapes.forEach(shape => {shape.draw()})//报错：类型“S”上不存在属性“draw”。
+// }
+function drawShapes(shapes) {
+    shapes.forEach(function (sharp) { sharp.draw(); });
+}
+var Circle = /** @class */ (function () {
+    function Circle() {
+    }
+    Circle.prototype.draw = function () {
+        console.log('circle draw');
+    };
+    return Circle;
+}());
+var Rectangle = /** @class */ (function () {
+    function Rectangle() {
+    }
+    Rectangle.prototype.draw = function () {
+        console.log('rectangle draw');
+    };
+    return Rectangle;
+}());
+drawShapes([new Circle(), new Rectangle()]);

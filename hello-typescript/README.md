@@ -2,7 +2,7 @@
  * @Description: ts基础知识
  * @Author: yangying01
  * @Date: 2020-06-03 11:48:58
- * @LastEditTime: 2020-06-12 16:48:43
+ * @LastEditTime: 2020-06-19 11:50:35
  * @LastEditors: yangying01
 --> 
 
@@ -110,6 +110,7 @@ interface fun{
 断言也不可能随便断言，number编译器也不知道怎么转换为boolean，案例见sure.ts
 
 
+
 * 泛型
 
 
@@ -117,6 +118,54 @@ interface fun{
 
 * Object???
 
+* 装饰器
 
+```
+1. 类装饰器
+<!-- 不带参数 -->
+@logClass(target: any){
+    // 添加类属性，target.prototype.xxx
+    // 添加类方法
+}
 
+<!-- 带参数，又名工厂装饰器 -->
+@logClass(param: any){
+    return function(target: any){
+        // 添加类属性，target.prototype.xxx
+        // 添加类方法
+    }
+}
 
+<!-- 类装饰器重载类的属性和方法 -->
+@logClass(target: any){
+    return class extend target{
+        // 所以target里的属性和方法重载
+    }
+}
+
+2.类属性装饰器
+@logProperty(param: any){
+    return function(target: any, attrName:any){
+        // 修改属性
+        target[attrName]
+    }
+}
+
+3.类方法装饰器
+@logMethod(param: any){
+    return function(target:any, methodName, desc){
+        
+    }
+}
+
+4.类方法参数装饰器
+@logParam(param: any){
+    return function(target:any, methodName, paramIndex){
+        
+    }
+}
+
+```
+执行顺序： 属性 > 方法 > 方法参数 > 类； 同类装饰器：执行自下而上
+
+查看ts编译后js代码执行打点。。。
