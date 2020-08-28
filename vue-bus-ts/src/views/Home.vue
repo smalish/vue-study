@@ -61,11 +61,11 @@ export default class Home extends Vue{
     that.name = '点击了'
 
     //第三方插件 vue-router, this.$router.push
-    // this.$router.push('/about')
-    // this.$router.push({
-    //   path: '/about', 
-    //   query:{a: '123'}
-    // })
+    this.$router.push('/about')
+    this.$router.push({
+      path: '/about', 
+      query:{a: '123'}
+    })
 
     //第三方插件 axios, this.$axios
     // 第三方插件 qs, this.$qs
