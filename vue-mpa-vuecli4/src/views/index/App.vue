@@ -1,8 +1,27 @@
 <template>
   <div id="app">
     index page 111
+    <HelloWorld />
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive" :key="$route.fullPath" />
+    </keep-alive>
+    <router-view  v-if="!$route.meta.keepAlive" :key="$route.fullPath" />
   </div>
 </template>
+
+<script>
+import HelloWorld from '@/components/HelloWorld.vue'
+export default {
+  data(){
+    return {
+
+    }
+  },
+  components: {
+    HelloWorld
+  }
+}
+</script>
 
 <style lang="less">
 #app {

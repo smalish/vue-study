@@ -1,0 +1,127 @@
+// 本项目中公共模块样式
+body{
+  font-family: "PingFangSC-Regular","微软雅黑",arial,sans-serif;
+  font-size: 28px;
+  background: #f9f9fb;
+}
+
+.overflow_text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 按钮-橘黄色
+.orange-btn{
+  width: 100%;
+  border-radius: 45px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #D6D6E0;
+  box-shadow: 0 6px 12px 0 rgba(69,69,129,0.10);
+  &.active{
+    background: linear-gradient(90deg, #F98400 0%, #FFA347 100%);
+    box-shadow: 0 6px 12px 0 rgba(242,99,0,0.20);
+  }
+  // 空心橘黄色按钮
+  &.hollow{
+    color: #F78400;
+    background: transparent;
+    box-shadow: none;
+    &::before{
+      border: 1px solid #F78400;
+      border-radius: 90px;
+    }
+  }
+}
+
+// 按钮-红色
+.red-btn {
+  color: #ffffff;
+  background-color: #d6d6e0;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.active {
+    background-image: linear-gradient(90deg, #ff634c 0%, #ff3737 100%);
+    box-shadow: 0 6px 12px 0 rgba(237, 2, 0, 0.2);
+  }
+}
+
+// 按钮灰色
+.gray-btn{
+  color: #D6D6E0;
+  background-color: #ffffff;
+  border-radius: 22px;
+  &.hollow{
+    &::before{
+      border-radius: 56px;
+      border: 1px solid #D6D6E0;
+    }    
+  }
+  
+}
+
+// 用户协议样式
+.protocol{
+  font-size: 24px;
+  color: #666666;
+  // .flex(center, flex-start);
+  .icon{
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    background-size: 28px 28px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Crect fill='%23D6D6E0' width='14' height='14' rx='2'/%3E%3Cpath d='M10.212 4.732L5.59 9.355l.435.435 4.624-4.623-.436-.435z' stroke='%23FFF'/%3E%3Cpath stroke='%23FFF' d='M3.74 6.635l-.707.708 2.72 2.72.707-.708z'/%3E%3C/g%3E%3C/svg%3E");
+    &.active{
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Crect fill='%23FF8200' width='14' height='14' rx='2'/%3E%3Cpath d='M10.212 4.732L5.59 9.355l.435.435 4.624-4.623-.436-.435z' stroke='%23FFF'/%3E%3Cpath stroke='%23FFF' d='M3.74 6.635l-.707.708 2.72 2.72.707-.708z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+  span{ 
+    vertical-align: middle;       
+  }  
+  div{
+    display: inline-block;
+  }
+  .light{
+    color: @color-orange;
+    vertical-align: middle;
+  }
+}
+
+// 1px样式
+.onepxBorder{
+  position: relative;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .onepxBorder:before{
+      content: "";
+      pointer-events: none; /* 防止点击触发 */
+      box-sizing: border-box;
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      left: 0;
+      top: 0;
+      -webkit-transform: (scale(0.5));
+      -webkit-transform-origin: 0 0;
+      transform: (scale(0.5));
+      transform-origin: 0 0;
+  }
+}
+
+::-webkit-input-placeholder{
+  color:#D6D6E0;
+}
+:-moz-placeholder{
+  color:#D6D6E0;
+}
+::-moz-placeholder{
+  color:#D6D6E0;
+}
